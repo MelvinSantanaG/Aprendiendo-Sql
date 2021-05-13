@@ -13,8 +13,7 @@
  create table usuarios (
   nombre varchar(30),
   clave varchar(10)
- );
-
+ )
  exec sp_tables @table_owner='dbo';
 
  exec sp_columns usuarios;
@@ -821,7 +820,7 @@ if object_id('empleados') is not null
 
 -- 40 - Eliminar restricciones (alter table - drop)
  if object_id('vehiculos') is not null
-  drop table vehiculos;
+  drop table vehiculos
 
  create table vehiculos(
   patente char(6) not null,
@@ -1630,14 +1629,11 @@ if object_id('libros') is not null
  if object_id('vista_empleados') is not null
   drop view vista_empleados;
 
- --create view vista_empleados as
   select (apellido+' '+e.nombre) as nombre,sexo,
    s.nombre as seccion, cantidadhijos
    from empleados as e
    join secciones as s
    on codigo=seccion;
-
- --select * from vista_empleados;
 
  exec sp_help vista_empleados;
 
