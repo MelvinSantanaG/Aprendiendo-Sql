@@ -42,7 +42,7 @@
  
 --5 - Tipos de datos básicos
  if object_id('libros') is not null
-  drop table libros;
+  drop table libros
 
  create table libros(
   titulo varchar(20),
@@ -435,7 +435,7 @@ if object_id('agenda') is not null
 
 -- 24 - Funciones: Una función es un conjunto de sentencias que operan como una unidad lógica.
       --Una función tiene un nombre, retorna un parámetro de salida y opcionalmente acepta paramétros de entrada. 
-			--Las funciones de SQL Server no pueden ser modificadas, las funciones definidas por el usuario si.
+	  --Las funciones de SQL Server no pueden ser modificadas, las funciones definidas por el usuario si.
 
 --25 - Funciones para el manejo de cadenas
  if object_id ('libros') is not null
@@ -631,7 +631,7 @@ if object_id('medicamentos') is not null
 
 -- 33 - Búsqueda de patrones (like - not like)
 if object_id('empleados') is not null
-  drop table empleados;
+  drop table empleados
 
  create table empleados(
   nombre varchar(30),
@@ -738,7 +738,7 @@ if object_id('empleados') is not null
  select ciudad, provincia,
   count(*) as cantidad
   from clientes
-  group by ciudad,provincia;
+  group by ciudad,provincia
 
  select ciudad, provincia,
   count(*) as cantidad
@@ -866,7 +866,7 @@ if object_id('empleados') is not null
 
 -- 41 - Trabajar con varias tablas: Para evitar la repetición de datos y ocupar menos espacio, 
       --se separa la información en varias tablas. Cada tabla almacena 
-			--parte de la información que necesitamos registrar.
+	  --parte de la información que necesitamos registrar.
 
 --42 - Combinación interna (inner join)
 if object_id('libros') is not null
@@ -1122,7 +1122,7 @@ if object_id('libros') is not null
    select nombre, domicilio,'profesor' from profesores
   order by condicion
 
---51 - Agregar y eliminar campos ( alter table - add - drop)
+--51 - Agregar y eliminar campos (alter table - add - drop)
 if object_id('libros') is not null
   drop table libros
 
@@ -1224,7 +1224,7 @@ if object_id('libros') is not null
   drop table libros
 
  if object_id('editoriales') is not null
-  drop table editoriales;
+  drop table editoriales
 
  create table editoriales(
   codigo tinyint identity,
@@ -1652,7 +1652,7 @@ if object_id('libros') is not null
    s.nombre as seccion, cantidadhijos
    from empleados as e
    join secciones as s
-   on codigo=seccion;
+   on codigo=seccion
 
  exec sp_help vista_empleados
 
@@ -1666,7 +1666,7 @@ if object_id('libros') is not null
 
  select * from sysobjects
   where xtype='V' and-- tipo vista
-  name like 'vista%'--búsqueda con comodín ;
+  name like 'vista%'--búsqueda con comodín
 
 --67 - Lenguaje de control de flujo (case)
  if object_id('alumnos') is not null
@@ -1711,7 +1711,7 @@ if object_id('libros') is not null
  if object_id('pa_crear_libros') is not null
   drop procedure pa_crear_libros
 
-  if object_id('libros')is not null
+  if object_id('libros') is not null
    drop table libros
  
   create table libros(
@@ -1724,7 +1724,7 @@ if object_id('libros') is not null
    primary key(codigo)
   )
 
- select *from libros
+ select * from libros
 
  exec sp_help pa_crear_libros
 
