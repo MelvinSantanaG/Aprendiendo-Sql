@@ -1,4 +1,4 @@
---1 Objetivos y alcances del tutORial de Microsoft Sql Server.
+--1 Objetivos y alcances del Tutorial de Microsoft Sql Server.
 
 --CREATE DATABASE BASeDeDatos
 
@@ -270,10 +270,10 @@ Editorial VARCHAR(15)
 INSERT INTO Libros(Titulo, Autor, Editorial) 
 VALUES('El aleph','Borges','Emece')
 
-SELECT * FROM Libros --mostramos los Registros de Libros.
+SELECT * FROM Libros --Mostramos los Registros de Libros.
 
 SELECT Titulo, Autor 
-FROM Libros --mostramos tútulos y Nombres de los Autores.
+FROM Libros --Mostramos tútulos y Nombres de los Autores.
 
 --11 - valores NULL (IS NULL)
 IF OBJECT_ID('Libros') IS NOT NULL
@@ -316,7 +316,7 @@ SELECT * FROM Libros
 WHERE Editorial IS NULL --Recuperemos los Libros cuyo Nombre de Editorial es "NULL".
 SELECT * FROM Libros 
 
-WHERE Editorial='' --AhORa veamos los Libros cuya Editorial almacena una cadena vacía.
+WHERE Editorial='' --AHora veamos los Libros cuya Editorial almacena una cadena vacía.
 SELECT * FROM Libros 
 WHERE Precio IS NOT NULL --Para recuperar los Libros cuyo Precio no sea nulo tipeamos.
 
@@ -517,14 +517,14 @@ VALUES('Uno','Richard Bach','Planeta',50.30,'100') --Si la cadena 100 no hay pro
 
 SELECT * FROM Libros
 
---19 - Tipo de dato (Fecha y hORa)
+--19 - Tipo de dato (Fecha y Hora)
 IF OBJECT_ID('Empleados') IS NOT NULL
 DROP TABLE Empleados
 
 CREATE TABLE Empleados(
 Nombre VARCHAR(20),
 Documento CHAR(8),
-FechaINgreso DATETIME
+FechaIngreso DATETIME
 )
 
 SET DATEFORMAT dmy
@@ -542,18 +542,18 @@ VALUES('Daniel Lopez','25555555','2.5.1990')
 
 SELECT * FROM Empleados
 
-SELECT FORMAT(GETDATE(), 'dd/MM/yyyy') AS FechaINgreso
+SELECT FORMAT(GETDATE(), 'dd/MM/yyyy') AS FechaIngreso
 
 --SELECT * FROM Empleados 
---WHERE FechaINgreso < '01-01-1985'
+--WHERE FechaIngreso < '01-01-1985'
 
 --UPDATE Empleados SET Nombre = 'Maria Carla Juarez' 
---WHERE FechaINgreso = '20.5.83'
+--WHERE FechaIngreso = '20.5.83'
 
 SELECT * FROM Empleados
 
 --DELETE FROM Empleados 
---WHERE FechaINgreso <> '20/05/1983'
+--WHERE FechaIngreso <> '20/05/1983'
 
 SELECT * FROM Empleados
 
@@ -2508,7 +2508,7 @@ CantidadHijos TINYINT
 CONSTRAINT CK_Empleados_Hijos CHECK(CantidadHijos >= 0),
 EstadoCivil CHAR(10)
 CONSTRAINT CK_Empleados_EstadoCivil CHECK(EstadoCivil IN ('Casado','DivORciado','Soltero','Viudo')),
-FechaINgreso DATETIME,
+FechaIngreso DATETIME,
 CONSTRAINT PK_Empleados PRIMARY KEY(Legajo),
 CONSTRAINT FK_Empleados_Seccion
 FOREIGN KEY(Seccion)
@@ -2563,10 +2563,10 @@ GO --Para evitar un error en VIEW.
 
 CREATE VIEW Vista_Empleados_INgreso(fecha, Cantidad)
 AS
-SELECT DATEPART(YEAR, FechaINgreso),
+SELECT DATEPART(YEAR, FechaIngreso),
 COUNT(*)
 FROM Empleados
-GROUP BY DATEPART(YEAR, FechaINgreso)
+GROUP BY DATEPART(YEAR, FechaIngreso)
 
 GO --Para evitar un error en VIEW.
 
@@ -2601,7 +2601,7 @@ CantidadHijos TINYINT
 CONSTRAINT CK_Empleados_Hijos CHECK(CantidadHijos >= 0),
 EstadoCivil CHAR(10)
 CONSTRAINT CK_Empleados_EstadoCivil CHECK(EstadoCivil IN ('Casado','DivORciado','Soltero','Viudo')),
-FechaINgreso DATETIME,
+FechaIngreso DATETIME,
 CONSTRAINT PK_Empleados PRIMARY KEY(Legajo),
 CONSTRAINT FK_Empleados_Seccion
 FOREIGN KEY(Seccion)
@@ -2857,7 +2857,7 @@ DROP TABLE Empleados
 CREATE TABLE Empleados(
 Documento CHAR(8) NOT NULL,
 Nombre VARCHAR(30),
-FechaINgreso DATETIME,
+FechaIngreso DATETIME,
 Mail VARCHAR(50),
 Telefono VARCHAR(12)
 )
