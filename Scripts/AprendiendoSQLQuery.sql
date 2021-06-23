@@ -2910,7 +2910,7 @@ END--BEGIN
 
 GO --Para evitar un error en CREATE FUNCTION.
 
-SELECT Nombre, dbo.F_FechaCadena(FechaINgreso) AS INgreso 
+SELECT Nombre, dbo.F_FechaCadena(FechaIngreso) AS INgreso 
 FROM Empleados
 
 SELECT dbo.F_FechaCadena(GETDATE())
